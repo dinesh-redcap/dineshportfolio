@@ -3,313 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Portfolio</title>
+    <meta name="description" content="Professional Portfolio Website">
+    <title>Dinesh Ravikumar | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="admin-container">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar" id="adminSidebar">
-            <div class="sidebar-header">
-                <!-- FIXED: Logo links to home section in admin, or index.html -->
-                <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
-                    <span class="logo-text" style="font-size: 20px;">DR</span>
-                    <span style="font-size: 0.85rem; color: var(--gray-500);">Admin</span>
-                </a>
-                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <ul class="sidebar-menu">
-                <li><a href="#dashboard" class="sidebar-link active" data-section="dashboard">
-                    <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
-                </a></li>
-                <li><a href="#profile" class="sidebar-link" data-section="profile">
-                    <i class="fas fa-user"></i> <span>Profile</span>
-                </a></li>
-                <li><a href="#projects-manage" class="sidebar-link" data-section="projects-manage">
-                    <i class="fas fa-briefcase"></i> <span>Projects</span>
-                </a></li>
-                <li><a href="#skills-manage" class="sidebar-link" data-section="skills-manage">
-                    <i class="fas fa-code"></i> <span>Skills</span>
-                </a></li>
-                <li><a href="#experience-manage" class="sidebar-link" data-section="experience-manage">
-                    <i class="fas fa-star"></i> <span>Experience</span>
-                </a></li>
-                <li><a href="#messages" class="sidebar-link" data-section="messages">
-                    <i class="fas fa-envelope"></i> <span>Messages</span>
-                </a></li>
-                <li><a href="#resume-upload" class="sidebar-link" data-section="resume-upload">
-                    <i class="fas fa-file-pdf"></i> <span>Resume</span>
-                </a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- FIXED: Logo now properly links to admin.html -->
+            <a href="admin.html" class="logo" id="logoLink">
+                <img src="" alt="Logo" class="logo-img" id="navLogo">
+                <span class="logo-text">DR</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="logout-btn" onclick="logout()">
-                <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </aside>
+        </div>
+    </nav>
 
-        <!-- Main Content -->
-        <main class="admin-main">
-            <!-- Dashboard Section -->
-            <section id="dashboard" class="admin-section active">
-                <div class="section-header">
-                    <h2>Dashboard Overview</h2>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
-                        <div class="stat-info">
-                            <h3 id="visitorCount">0</h3>
-                            <p>Total Visitors</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="stat-info">
-                            <h3 id="messageCount">0</h3>
-                            <p>Messages</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
-                        <div class="stat-info">
-                            <h3 id="projectCount">0</h3>
-                            <p>Projects</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-code"></i></div>
-                        <div class="stat-info">
-                            <h3 id="skillCount">0</h3>
-                            <p>Skills</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <div class="stat-info">
-                            <h3 id="experienceCount">0</h3>
-                            <p>Experiences</p>
-                        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image" id="heroImageContainer">
+                        <img src="" alt="Profile" id="profileImageDisplay">
                     </div>
                 </div>
-            </section>
+                <h1 class="hero-title" id="heroName">Dinesh Kumar</h1>
+                <p class="hero-designation" id="heroDesignation">Full Stack Developer</p>
+                <p class="hero-bio" id="heroBio">Building innovative solutions with modern technologies. Passionate about creating impactful digital experiences.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-white">View Projects</a>
+                    <a href="#contact" class="btn btn-outline-white">Contact Me</a>
+                    <a href="#" class="btn btn-outline-white" id="downloadResume" style="display: none;">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Profile Section -->
-            <section id="profile" class="admin-section">
-                <div class="section-header">
-                    <h2>Profile Management</h2>
-                </div>
-                <form id="profileForm" class="admin-form">
-                    <div class="form-group">
-                        <label>Profile/Logo Image (Single Image for Both)</label>
-                        <input type="file" id="singleImage" accept="image/*">
-                        <div class="image-preview">
-                            <img id="imagePreview" src="" alt="Preview">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" id="editName" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Designation</label>
-                            <input type="text" id="editDesignation" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>About / Bio</label>
-                        <textarea id="editBio" rows="3" required></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" id="editEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" id="editPhone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Location</label>
-                        <input type="text" id="editLocation" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Social Links</label>
-                        <div class="social-inputs">
-                            <input type="url" id="editGithub" placeholder="GitHub URL">
-                            <input type="url" id="editLinkedin" placeholder="LinkedIn URL">
-                            <input type="url" id="editTwitter" placeholder="Twitter URL">
-                            <input type="url" id="editInstagram" placeholder="Instagram URL">
-                            <input type="url" id="editWhatsapp" placeholder="WhatsApp Number (with country code)">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Save Profile</button>
-                </form>
-            </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Showcasing my recent work and contributions</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects loaded dynamically -->
+            </div>
+        </div>
+    </section>
 
-            <!-- Projects Management -->
-            <section id="projects-manage" class="admin-section">
-                <div class="section-header">
-                    <h2>Projects Management</h2>
-                    <button class="btn btn-primary" onclick="window.showAddProjectForm()">
-                        <i class="fas fa-plus"></i> Add Project
-                    </button>
-                </div>
-                <div id="projectFormContainer" class="form-container" style="display: none;">
-                    <h3 id="projectFormTitle">Add New Project</h3>
-                    <form id="projectForm">
-                        <input type="hidden" id="projectId">
-                        <div class="form-group">
-                            <label>Cover Image * (16:9 ratio recommended)</label>
-                            <input type="file" id="projectImage" accept="image/*">
-                        </div>
-                        <div class="form-group">
-                            <label>Title *</label>
-                            <input type="text" id="projectTitle" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description *</label>
-                            <textarea id="projectDesc" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Date *</label>
-                            <input type="date" id="projectDate" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Documentation (PDF/DOC/Link)</label>
-                            <input type="file" id="projectDoc" accept=".pdf,.doc,.docx">
-                            <input type="url" id="projectDocLink" placeholder="Or paste documentation link">
-                        </div>
-                        <div class="form-group">
-                            <label>GitHub Repository Link</label>
-                            <input type="url" id="projectGithub" placeholder="https://github.com/...">
-                        </div>
-                        <div class="form-group">
-                            <label>Video Link (YouTube/Drive/MP4)</label>
-                            <input type="url" id="projectVideo" placeholder="Video URL">
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save Project</button>
-                            <button type="button" class="btn btn-secondary" onclick="window.hideProjectForm()">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="projects-list" id="adminProjectsList"></div>
-            </section>
-
-            <!-- Skills Management -->
-            <section id="skills-manage" class="admin-section">
-                <div class="section-header">
-                    <h2>Skills Management</h2>
-                    <button class="btn btn-primary" onclick="window.showAddSkillForm()">
-                        <i class="fas fa-plus"></i> Add Skill
-                    </button>
-                </div>
-                <div id="skillFormContainer" class="form-container" style="display: none;">
-                    <h3 id="skillFormTitle">Add New Skill</h3>
-                    <form id="skillForm">
-                        <input type="hidden" id="skillId">
-                        <div class="form-group">
-                            <label>Skill Title *</label>
-                            <input type="text" id="skillTitle" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Description *</label>
-                            <textarea id="skillDesc" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Certificate (PDF/Image/Link)</label>
-                            <input type="file" id="skillCert" accept=".pdf,.jpg,.jpeg,.png">
-                            <input type="url" id="skillCertLink" placeholder="Or paste certificate link">
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save Skill</button>
-                            <button type="button" class="btn btn-secondary" onclick="window.hideSkillForm()">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="skills-list" id="adminSkillsList"></div>
-            </section>
-
-            <!-- Experience Management -->
-            <section id="experience-manage" class="admin-section">
-                <div class="section-header">
-                    <h2>Experience Management</h2>
-                    <button class="btn btn-primary" onclick="window.showAddExperienceForm()">
-                        <i class="fas fa-plus"></i> Add Experience
-                    </button>
-                </div>
-                <div id="experienceFormContainer" class="form-container" style="display: none;">
-                    <h3 id="experienceFormTitle">Add New Experience</h3>
-                    <form id="experienceForm">
-                        <input type="hidden" id="experienceId">
-                        <div class="form-group">
-                            <label>Images (16:9 ratio, multiple allowed) *</label>
-                            <input type="file" id="experienceImages" accept="image/*" multiple>
-                            <div class="image-preview-grid" id="experienceImagePreview"></div>
-                        </div>
-                        <div class="form-group">
-                            <label>Title / Role *</label>
-                            <input type="text" id="experienceTitle" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Company / Institution *</label>
-                            <input type="text" id="experienceCompany" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Duration *</label>
-                            <input type="text" id="experienceDuration" required placeholder="e.g., Jan 2022 - Present">
-                        </div>
-                        <div class="form-group">
-                            <label>Description *</label>
-                            <textarea id="experienceDesc" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Certificate File</label>
-                            <input type="file" id="experienceCert" accept=".pdf,.jpg,.jpeg,.png">
-                        </div>
-                        <div class="form-group">
-                            <label>Certificate Link</label>
-                            <input type="url" id="experienceCertLink" placeholder="Or paste certificate link">
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save Experience</button>
-                            <button type="button" class="btn btn-secondary" onclick="window.hideExperienceForm()">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="experience-list" id="adminExperienceList"></div>
-            </section>
-
-            <!-- Messages Section -->
-            <section id="messages" class="admin-section">
-                <div class="section-header">
-                    <h2>Contact Messages</h2>
-                </div>
-                <div id="messagesList"></div>
-            </section>
-
-            <!-- Resume Upload -->
-            <section id="resume-upload" class="admin-section">
-                <div class="section-header">
-                    <h2>Resume Upload</h2>
-                </div>
-                <form id="resumeForm">
-                    <div class="form-group">
-                        <label>Upload Resume (PDF)</label>
-                        <input type="file" id="resumeFile" accept=".pdf">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Upload Resume</button>
-                </form>
-                <div id="currentResume" style="margin-top: 20px;"></div>
-            </section>
-        </main>
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="projectModalBody">
+                <!-- Project details loaded dynamically -->
+            </div>
+        </div>
     </div>
 
-    <script src="js/admin.js"></script>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">Technologies and tools I specialize in</p>
+            </div>
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Achievements</h2>
+                <p class="section-subtitle">My professional journey and accomplishments</p>
+            </div>
+            <div class="experience-grid" id="experienceGrid">
+                <!-- Experiences loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Modal -->
+    <div class="modal" id="experienceModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body" id="experienceModalBody">
+                <!-- Experience details loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on your next project</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p id="contactEmail">dineshredcap@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p id="contactLocation">India</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p id="contactPhone">+91 1234567890</p>
+                        </div>
+                    </div>
+                    <div class="social-links" id="socialLinks">
+                        <!-- Social links loaded dynamically -->
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/911234567890" class="whatsapp-float" id="whatsappLink" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">DR</span>
+                </div>
+                <p id="footerText">&copy; 2024 Dinesh Kumar. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
